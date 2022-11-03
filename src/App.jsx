@@ -1,3 +1,7 @@
+import { Buscador } from "./components/Buscador";
+import { Crear } from "./components/Crear";
+import { ItemList } from "./components/ItemList";
+import { NavBar } from "./components/NavBar";
 
 function App() {
   return (
@@ -12,63 +16,21 @@ function App() {
       </header>
 
       {/* Barra de navegación */}
-      <nav className="nav">
-        <ul>
-          <li><a href="/#">Inicio</a></li>
-          <li><a href="/#">Artículos</a></li>
-          <li><a href="/#">Carrito</a></li>
-          <li><a href="/#">Contacto</a></li>
-        </ul>
-      </nav>
+      <NavBar></NavBar>
 
       {/* Contenido principal */}
       <section id="content" className="content">
 
-        {/* Aquí van los artículos */}
-        <article className="peli-item">
-          <h3 className="title">Artículo 1</h3>
-          <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-
-          <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
-        </article>
-
-        <article className="peli-item">
-          <h3 className="title">Artículo 2</h3>
-          <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-
-          <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
-        </article>
-
-        <article className="peli-item">
-          <h3 className="title">Artículo 3</h3>
-          <p className="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-
-          <button className="edit">Editar</button>
-          <button className="delete">Borrar</button>
-        </article>
+        {/* Aquí va el listado de artículos */}
+        <ItemList/>
 
       </section>
 
       {/* Barra lateral */}
       <aside className="lateral">
-        <div className="search">
-          <h3 className="title">Buscador</h3>
-          <form>
-            <input type="text" id="search_field" />
-            <button id="search">Buscar</button>
-          </form>
-        </div>
+        <Buscador></Buscador>
 
-        <div className="add">
-          <h3 className="title">Añadir artículo</h3>
-          <form>
-            <input type="text" id="title" placeholder="Título" />
-            <textarea id="description" placeholder="Descripción"></textarea>
-            <input type="submit" id="save" value="Guardar" />
-          </form>
-        </div>
+        <Crear></Crear>
       </aside>
 
       {/* Pie de página */}
